@@ -22,4 +22,4 @@ https://financialmodelingprep.com/developer/docs/
 
 https://stocknewsapi.com/
 
-![Layout](https://files.slack.com/files-pri/T012THZCCB1-F016C1MUH1V/image.png)
+![Layout](/assets/projectproposal.png)
