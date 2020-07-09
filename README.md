@@ -12,7 +12,7 @@ Phase 2: Necessary
 -Return and display company logo.
 
 Phase 3: Nice to have
--Display YTD performance metrics vs S&P500 ytd metric. 
+-Display YTD performance metrics vs S&P500 ytd metric. (API STRICTLY FOR THIS)
 
 Group members:
 Patrick Wells
