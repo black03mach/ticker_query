@@ -19,3 +19,7 @@ Patrick Wells
 Elizabeth Lee
 Sarah Abouelela
 Michael Chen
+
+https://financialmodelingprep.com/developer/docs/
+
+https://stocknewsapi.com/
