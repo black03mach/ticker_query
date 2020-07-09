@@ -22,5 +22,5 @@ https://financialmodelingprep.com/developer/docs/
 
 https://stocknewsapi.com/
 
-https://files.slack.com/files-pri/T012THZCCB1-F016C1MUH1V/image.png
-=======
+![https://files.slack.com/files-pri/T012THZCCB1-F016C1MUH1V/image.png]
+(https://files.slack.com/files-pri/T012THZCCB1-F016C1MUH1V/image.png)
