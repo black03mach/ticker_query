@@ -13,3 +13,9 @@ Phase 2: Necessary
 
 Phase 3: Nice to have
 -Display YTD performance metrics vs S&P500 ytd metric. 
+
+Group members:
+Patrick Wells
+Elizabeth Lee
+Sarah Abouelela
+Michael Chen
