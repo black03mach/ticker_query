@@ -10,8 +10,6 @@ Phase 1: Necessary
 Phase 2: Necessary
 -Return and display financial news.
 -Return and display company logo.
-
-Phase 3: Nice to have
 -Display YTD performance metrics vs S&P500 ytd metric. (API STRICTLY FOR THIS)
 
 Group members:
@@ -19,3 +17,9 @@ Patrick Wells
 Elizabeth Lee
 Sarah Abouelela
 Michael Chen
+
+https://financialmodelingprep.com/developer/docs/
+
+https://stocknewsapi.com/
+
+https://files.slack.com/files-pri/T012THZCCB1-F016C1MUH1V/image.png
