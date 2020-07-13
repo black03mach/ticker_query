@@ -13,7 +13,7 @@ $('button').on('click', function (){
     console.log(tickerqueryURL);
     console.log(newsqueryURL);
 
-    // Stock metric AJAX call
+    // Stock metric AJAX call 
     $.ajax({
         url : tickerqueryURL,
         method : "GET"
