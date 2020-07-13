@@ -23,6 +23,7 @@
     <!-- Chart.js CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
     <script src="assets/js/stock-chart.js" defer></script>
+    <!-- <script src="assets/js/script-lee.js" defer></script> -->
 </head>
 
 <body>
@@ -41,7 +42,8 @@
                     <!-- I recommend putting the links to the APIs in the About Us page -MC -->
                     <li><a href="https://financialmodelingprep.com/developer/docs/">Stock API</a></li>
                     <li><a href="https://stocknewsapi.com/">News Api</a></li>
-                    <li><input type="search" placeholder="Search for Company Name or Ticker Symbol"></li>
+                    <li><input type="search" id="tickerInput" placeholder="Search for Company Name or Ticker Symbol">
+                    </li>
                     <li><button type="button" class="button">Search</button></li>
                 </ul>
                 <button type="button" class="button hide-for-large" data-toggle="offCanvas">
@@ -70,6 +72,76 @@
                                     <li id="756">3 Years</li>
                                 </ul>
                             </div>
+
+    <div class="grid-x off-canvas-wrapper">
+        <!-- Stock Chart and Stock Metrics -->
+        <div class="cell medium-6 large-5">
+            <div>
+                <section>
+                    <h2 id="ticker">Stock name (Ticker)</h2>
+                    <p><img src="https://images.ctfassets.net/fevtq3bap7tj/10mfqdtuYcCy6IM8GYqQ68/e8c36d9b14a1ba2caf62da47dfbf7cf2/Playground__Chart_Gallery__OG_Image.png"
+                            alt="main article image"></p>
+                </section>
+
+
+                <section class="Metrics">
+                    <div class="">
+                        <h3 style="margin: 0;" class="text-center">Stock Metrics</h3>
+                    </div>
+
+                    <div>
+
+                        <div class="card">
+                            <div class="card-section">
+                                <h4>Beta</h4>
+                                <p id="beta"></p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-section">
+                                <h4>Recent Dividend</h4>
+                                <p id="dividend"></p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-section">
+                                <h4>Year High</h4>
+                                <p id="yearHigh"></p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-section">
+                                <h4>P/E Ratio</h4>
+                                <p id="peRatio"></p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-section">
+                                <h4>Price to Book Ratio</h4>
+                                <p id="pbRatio"></p>
+    <main class='grid-container'>
+        <div class="grid-x grid-margin-x off-canvas-wrapper">
+            <!-- Stock Chart and Stock Metrics -->
+            <div class="cell medium-6 large-5">
+                <div>
+                    <section>
+                        <h2>Stock name (Ticker)</h2>
+                        <p><img src="https://images.ctfassets.net/fevtq3bap7tj/10mfqdtuYcCy6IM8GYqQ68/e8c36d9b14a1ba2caf62da47dfbf7cf2/Playground__Chart_Gallery__OG_Image.png"
+                                alt="main article image"></p>
+                    </section>
+                </div>
+            </div>
+        
+            <!-- Company Info -->
+            <div class="cell medium-6 large-4 tickers">
+                <div class="media-object">
+                    <div class="media-object-section">
+                        <div class="thumbnail">
+                            <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="90px" alt="logo">
                         </div>
                     </div>
                     <!-- Company Info -->
@@ -132,6 +204,12 @@
                                     <h4>Metric</h4>
                                     <p></p>
                                 </div>
+                    </div>
+                    <div class="media-object">
+                        <div class="media-object-section">
+                            <div class="thumbnail">
+                                <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="80px" alt="logo">
+
                             </div>
                         </div>
                         <div class="cell medium-6 large-4">
@@ -157,6 +235,36 @@
                     <div class="media-object-section">
                         <div class="thumbnail">
                             <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="80px" alt="logo">
+
+        <!-- Company Info and Latest News -->
+        <div class="cell medium-6 large-4 tickers">
+            <div class="media-object">
+                <div class="media-object-section">
+                    <div class="thumbnail">
+                        <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="90px" alt="logo">
+                    </div>
+                </div>
+                <div class="media-object-section main-section">
+                    <h4 id="ticker">Searched Ticker</h4>
+                    <p id="description">Company Description Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Recusandae impedit
+                        beatae,
+                        ipsum delectus aperiam nesciunt magni facilis ullam.</p>
+                    <p id="currentPrice">Price</p>
+                </div>
+        
+        <section class="Metrics">
+            <div class="">
+                <h3 style="margin: 0;" class="text-center">Stock Metrics</h3>
+
+            </div>
+        
+            <div class="grid-x grid-margin-x">
+                <div class="cell large-2">
+                    <div class="card">
+                        <div class="card-section">
+                            <h4>Metric</h4>
+                            <p></p>
                         </div>
                     </div>
                     <div class="media-object-section main-section">
