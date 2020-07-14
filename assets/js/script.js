@@ -17,7 +17,7 @@ $('button').on('click', function (){
     // console.log(newsqueryURL);
     // console.log(ytdURL);
 
-    // Stock metric AJAX call
+    // Stock metric AJAX call 
     $.ajax({
         url : tickerqueryURL,
         method : "GET"
