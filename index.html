@@ -27,13 +27,15 @@
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/script-lee.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
-    <script src="assets/js/stock-chart.js" defer></script>
+    <!-- <script src="assets/js/stock-chart.js" defer></script> -->
 </head>
 
 <body class="grid-container">
-    <header> 
+    <header>
         <!-- Sub Navigation -->
-        <nav class="top-bar topbar-responsive navbar">
+        <!-- Added classes and attributes to nav for modal -->
+        <nav class="top-bar topbar-responsive navbar reveal" id="modal" data-reveal data-close-on-click="true"
+            data-animation-in="spin-in" data-animation-out="spin-out">
             <div class="top-bar-left">
                 <h1 id="brand">Simpli-Stocks</h1>
             </div>
@@ -44,9 +46,11 @@
                 <ul class="menu horizontal">
                     <li class="navigation"><a href="./aboutus.html">About Us</a></li>
                     <!-- I recommend putting the links to the APIs in the About Us page -MC -->
-                    <li class="navigation"><a href="https://financialmodelingprep.com/developer/docs/">Stock API</a></li>
+                    <li class="navigation"><a href="https://financialmodelingprep.com/developer/docs/">Stock API</a>
+                    </li>
                     <li class="navigation"><a href="https://stocknewsapi.com/">News Api</a></li>
-                    <li class="search"><input type="search" id="tickerInput" maxlength="100%" placeholder="Company Name"></li>
+                    <li class="search"><input type="search" id="tickerInput" maxlength="100%"
+                            placeholder="Company Name"></li>
                     <li><button type="button" class="button round myButton">Search</button></li>
                 </ul>
                 <button type="button" class="button hide-for-large" data-toggle="offCanvas">
@@ -62,7 +66,7 @@
             <div class="grid-x grid-margin-x">
                 <div class="cell medium-6 large-5">
                     <div class="card">
-                        <h2>SPDR S&P 500 Trust ETF (SPY)</h2>
+                        <h2></h2>
                         <div class="chart-container" style="height:100%; width:97%">
                             <canvas id="chart">
                             </canvas>
@@ -133,7 +137,7 @@
                             <p id="currentPrice"></p>
                         </div>
                     </div>
-               
+
                     <section class="news">
                         <div>
                             <h3 style="margin: 0;" class="text-center">LATEST NEWS</h3>
@@ -231,10 +235,10 @@
                     </div>
                 </div>
             </div>
-         </div>
+        </div>
     </main>
-    
-    <footer >
+
+    <footer>
         <div class="cell medium-6">
             <ul class="menu footer">
                 <li><a href="./aboutus.html">About Us</a></li>
