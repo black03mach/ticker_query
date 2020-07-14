@@ -5,230 +5,248 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ticker Query</title>
-    <!-- Compressed CSS -->
+    <!-- Foundation CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
         integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <!-- Google Fonts  -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;600&display=swap" rel="stylesheet">
+    <!-- jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
     <!-- Custom css styles -->
     <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/navbar.css" />
 
     <!-- jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <!-- script src="./assets/js/script.js" defer></script -->
     <script src="./assets/js/abou-script.js" defer></script>
-    
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/script-lee.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+    <script src="assets/js/stock-chart.js" defer></script>
 </head>
 
 <body class="grid-container">
     <header> 
         <!-- Sub Navigation -->
-        <nav class="top-bar topbar-responsive">
+        <nav class="top-bar topbar-responsive navbar">
             <div class="top-bar-left">
-                <h1>Simpli-Stocks</h1>
+                <h1 id="brand">Simpli-Stocks</h1>
             </div>
             <div class="top-bar-right topbar-responsive-links">
                 <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
                     <button class="menu-icon" type="button" data-toggle></button>
                 </div>
-                <ul class="menu medium-horizontal">
-                    <li><a href="./aboutus.html">About Us</a></li>
+                <ul class="menu horizontal">
+                    <li class="navigation"><a href="./aboutus.html">About Us</a></li>
                     <!-- I recommend putting the links to the APIs in the About Us page -MC -->
-                    <li><a href="https://financialmodelingprep.com/developer/docs/">Stock API</a></li>
-                    <li><a href="https://stocknewsapi.com/">News Api</a></li>
-                    <li><input type="search" placeholder="Search for Company Name or Ticker Symbol"></li>
-                    <li><button type="button" class="button">Search</button></li>
+                    <li class="navigation"><a href="https://financialmodelingprep.com/developer/docs/">Stock API</a></li>
+                    <li class="navigation"><a href="https://stocknewsapi.com/">News Api</a></li>
+                    <li class="search"><input type="search" maxlength="100%" placeholder="Company Name"></li>
+                    <li><button type="button" class="button round myButton">Search</button></li>
                 </ul>
-                <button type="button" class="button" data-toggle="offCanvas">
+                <button type="button" class="button hide-for-large" data-toggle="offCanvas">
                     Open Previous Search
                 </button>
             </div>
         </nav>
-
     </header>
 
-    <div class="grid-x off-canvas-wrapper">
-        <!-- Stock Chart and Stock Metrics -->
-        <div class="cell medium-6 large-5">
-            <div>
-                <section>
-                    <h2>Stock name (Ticker)</h2>
-                    <p><img src="https://images.ctfassets.net/fevtq3bap7tj/10mfqdtuYcCy6IM8GYqQ68/e8c36d9b14a1ba2caf62da47dfbf7cf2/Playground__Chart_Gallery__OG_Image.png"
-                            alt="main article image"></p>
-                </section>
+    <main class="grid-container off-canvas-wrapper">
+        <!-- Stock Chart-->
+        <div class="grid-x large-9 grid-margin-x">
+            <div class="grid-x grid-margin-x">
+                <div class="cell medium-6 large-5">
+                    <div class="card">
+                        <h2>SPDR S&P 500 Trust ETF (SPY)</h2>
+                        <div class="chart-container" style="height:100%; width:97%">
+                            <canvas id="chart">
+                            </canvas>
+                            <ul class="menu expanded" id="stock-history">
+                                <li id="5min">1 Day</li>
+                                <li id="5">5 Days</li>
+                                <li id="30">30 Days</li>
+                                <li id="252">1 Year</li>
+                                <li id="756">3 Years</li>
+                            </ul>
+                        </div>
 
-
-                <section class="Metrics">
-                    <div class="">
-                        <h3 style="margin: 0;" class="text-center">Stock Metrics</h3>
+                        <section class="Metrics">
+                            <div class="">
+                                <h3 style="margin: 0;" class="text-center">Stock Metrics</h3>
+                            </div>
+                            <div>
+                                <div class="card">
+                                    <div class="card-section">
+                                        <h4>Metric</h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-section">
+                                        <h4>Dividends</h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                ​
+                                <div class="card">
+                                    <div class="card-section">
+                                        <h4>YTD Performance</h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                ​
+                                <div class="card">
+                                    <div class="card-section">
+                                        <h4>P/E Ratio</h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                                ​
+                                <div class="card">
+                                    <div class="card-section">
+                                        <h4>Metric</h4>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
-
-                    <div>
-
-                        <div class="card">
-                            <div class="card-section">
-                                <h4>Metric</h4>
-                                <p></p>
+                </div>
+                ​
+                <!-- Company Info and Latest News -->
+                <div class="cell medium-6 large-4 tickers">
+                    <div class="media-object">
+                        <div class="media-object-section">
+                            <div class="thumbnail">
+                                <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="90px"
+                                    alt="logo">
                             </div>
                         </div>
-
-                        <div class="card">
-                            <div class="card-section">
-                                <h4>Dividends</h4>
+                        <div class="media-object-section main-section">
+                            <h4>Searched Ticker</h4>
+                            <p>Company Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
+                                impedit
+                                beatae,
+                                ipsum delectus aperiam nesciunt magni facilis ullam.</p>
+                            <p>Price</p>
+                        </div>
+                    </div>
+               
+                    <section class="news">
+                        <div>
+                            <h3 style="margin: 0;" class="text-center">LATEST NEWS</h3>
+                        </div>
+                        <article>
+                            <div class="card">
+                                <!-- data.title -->
+                                <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
+                                <p>
+                                    <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
+                                    <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
+                                </p>
                                 <p></p>
                             </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-section">
-                                <h4>YTD Performance</h4>
+                            ​
+                            <div class="card">
+                                <!-- data.title -->
+                                <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
+                                <p>
+                                    <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
+                                    <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
+                                </p>
                                 <p></p>
                             </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-section">
-                                <h4>P/E Ratio</h4>
+                            <div class="card">
+                                <!-- data.title -->
+                                <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
+                                <p>
+                                    <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
+                                    <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
+                                </p>
                                 <p></p>
                             </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-section">
-                                <h4>Metric</h4>
+                            <div class="card">
+                                <!-- data.title -->
+                                <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
+                                <p>
+                                    <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
+                                    <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
+                                </p>
                                 <p></p>
+                            </div>
+                            ​
+                        </article>
+                        ​
+                    </section>
+                </div>
+                ​
+                <!-- Previously Searched Tickers / Portfolio. This will use the off-canvas class to slide in when in small and medium views -->
+                <div class="off-canvas-absolute position-right reveal-for-large large-3" id="offCanvas" data-off-canvas>
+                    <button class="close-button" aria-label="Close menu" type="button" data-close>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="off-canvas-content" data-off-canvas-content>
+                        <h5>Previously Searched Tickers</h5>
+                        <div class="media-object">
+                            <div class="media-object-section">
+                                <div class="thumbnail">
+                                    <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="80px"
+                                        alt="logo">
+                                </div>
+                            </div>
+                            <div class="media-object-section main-section">
+                                <h5>Ticker 1</h5>
+                                <p>Company Description</p>
+                                <p>Price</p>
+                            </div>
+                        </div>
+                        <div class="media-object">
+                            <div class="media-object-section">
+                                <div class="thumbnail">
+                                    <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="80px"
+                                        alt="logo">
+                                </div>
+                            </div>
+                            <div class="media-object-section main-section">
+                                <h5>Ticker 2</h5>
+                                <p>Company Description</p>
+                                <p>Price</p>
+                            </div>
+                        </div>
+                        <div class="media-object">
+                            <div class="media-object-section">
+                                <div class="thumbnail">
+                                    <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="80px"
+                                        alt="logo">
+                                </div>
+                            </div>
+                            <div class="media-object-section main-section">
+                                <h5>Ticker 3</h5>
+                                <p>Company Description</p>
+                                <p>Price</p>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
             </div>
-        </div>
-
-        <!-- Company Info and Latest News -->
-        <div class="cell medium-6 large-4 tickers">
-            <div class="media-object">
-                <div class="media-object-section">
-                    <div class="thumbnail">
-                        <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="90px" alt="logo">
-                    </div>
-                </div>
-                <div class="media-object-section main-section">
-                    <h4>Searched Ticker</h4>
-                    <p>Company Description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit
-                        beatae,
-                        ipsum delectus aperiam nesciunt magni facilis ullam.</p>
-                    <p>Price</p>
-                </div>
-            </div>
-
-            <section class="news">
-                <div>
-                    <h3 style="margin: 0;" class="text-center">LATEST NEWS</h3>
-                </div>
-                <article>
-                    <div class="card">
-                        <!-- data.title -->
-                        <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
-                        <p>
-                            <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
-                            <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
-                        </p>
-                        <p></p>
-                    </div>
-
-                    <div class="card">
-                        <!-- data.title -->
-                        <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
-                        <p>
-                            <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
-                            <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
-                        </p>
-                        <p></p>
-                    </div>
-                    <div class="card">
-                        <!-- data.title -->
-                        <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
-                        <p>
-                            <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
-                            <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
-                        </p>
-                        <p></p>
-                    </div>
-                    <div class="card">
-                        <!-- data.title -->
-                        <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
-                        <p>
-                            <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
-                            <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
-                        </p>
-                        <p></p>
-                    </div>
-
-                </article>
-
-            </section>
-        </div>
-
-        <!-- Previously Searched Tickers / Portfolio. This will use the off-canvas class to slide in when in small and medium views -->
-        <div class="off-canvas-absolute position-right reveal-for-large large-3" id="offCanvas" data-off-canvas>
-            <button class="close-button" aria-label="Close menu" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="off-canvas-content" data-off-canvas-content>
-                <h5>Previously Searched Tickers</h5>
-                <div class="media-object">
-                    <div class="media-object-section">
-                        <div class="thumbnail">
-                            <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="80px" alt="logo">
-                        </div>
-                    </div>
-                    <div class="media-object-section main-section">
-                        <h5>Ticker 1</h5>
-                        <p>Company Description</p>
-                        <p>Price</p>
-                    </div>
-                </div>
-                <div class="media-object">
-                    <div class="media-object-section">
-                        <div class="thumbnail">
-                            <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="80px" alt="logo">
-                        </div>
-                    </div>
-                    <div class="media-object-section main-section">
-                        <h5>Ticker 2</h5>
-                        <p>Company Description</p>
-                        <p>Price</p>
-                    </div>
-                </div>
-                <div class="media-object">
-                    <div class="media-object-section">
-                        <div class="thumbnail">
-                            <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="80px" alt="logo">
-                        </div>
-                    </div>
-                    <div class="media-object-section main-section">
-                        <h5>Ticker 3</h5>
-                        <p>Company Description</p>
-                        <p>Price</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <footer>
+         </div>
+    </main>
+    
+    <footer >
         <div class="cell medium-6">
-            <ul class="menu">
+            <ul class="menu footer">
                 <li><a href="./aboutus.html">About Us</a></li>
                 <li><a href="https://financialmodelingprep.com/developer/docs/">Stock API</a></li>
                 <li><a href="https://stocknewsapi.com/">News Api</a></li>
             </ul>
         </div>
 
-        <div class="cell medium-6">
+        <div class="cell medium-6 footer">
             <ul class="menu align-right">
                 <li class="menu-text">Copyright © 2020 Group 3</li>
             </ul>
