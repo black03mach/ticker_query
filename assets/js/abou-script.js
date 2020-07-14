@@ -16,16 +16,17 @@ $('button').on('click', function (){
         url : "https://stocknewsapi.com/api/v1?items=50&token=75mcsxzsde9ronsyffilsqncg6djkx8ecrsofimm&tickers=aapl",
         method : "GET",
         contentType: "application/json",
-        //     dataType: "jsonp"
     }).then(function(response){   
         console.log(response)
     })
 })
 
 //    newsInput = $('#newsInput').val().trim();
+$('#button').on('click', function (){
 // function display()  {
 //     var a = [];
 //     for ( var i = 0; i < 4; i++ ) {
 //         cardBody.append("#");
 //         card.append(cardBody)
 //         $("#current-weather-container").append(card);    
+})
