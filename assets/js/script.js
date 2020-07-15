@@ -3,17 +3,26 @@
 var tickerAPIKey = "d36814bc6409a96b343b47b09e7eb44a";
 var newsAPIKey = "fybsnxqp9z369dpyru1k6ndejeoj7n2pytwfntsq"
 
-$('button').on('click', function () {
+$('#search-button').on('click', function () {
     event.preventDefault();
     tickerInput = $('#tickerInput').val().trim();
     //console.log(tickerInput);
     // Ill check this code once we have everything up and running.
     // console.log(tickerInput)
+    callRequests(tickerInput);
+
+})
+
+//add a function to show the stock metrics
+//create a function to save the search
+
+// function for ajax call
+function callRequests(tickerInput) {
     var tickerqueryURL = "https://financialmodelingprep.com/api/v3/profile/" + tickerInput + "?apikey=" + tickerAPIKey;
     var tickerratioURL = "https://financialmodelingprep.com/api/v3/ratios/" + tickerInput + "?period=quarter&apikey=" + tickerAPIKey;
     var ytdURL = "https://financialmodelingprep.com/api/v3/quote/" + tickerInput + "?apikey=" + tickerAPIKey;
     var newsqueryURL = "https://stocknewsapi.com/api/v1?tickers=" + tickerInput + "&items=50&token=" + newsAPIKey;
-    // console.log(tickerqueryURL);
+    console.log(tickerqueryURL);
     // console.log(newsqueryURL);
     // console.log(ytdURL);
 
@@ -68,7 +77,4 @@ $('button').on('click', function () {
     }).then(function (response) {
         //console.log(response)
     })
-})
-
-//add a function to show the stock metrics
-//create a function to save the search
+}

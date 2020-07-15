@@ -1,24 +1,24 @@
-const apikey = "5bb6d4317d6a3147707689eedc985177"; //5bb6d4317d6a3147707689eedc985177;
+// Load stock charts based on Ticker search. Charts are generated via chart.js library
+
+// const apikeyMC = "5bb6d4317d6a3147707689eedc985177"; //tickerAPIKey: d36814bc6409a96b343b47b09e7eb44a;
 var ticker = "";
 var tickerUppercase = "";
+// setup canvas
+const ctx = document.getElementById("chart").getContext("2d");
+// initialize an empty chart;
+var myChart = new Chart(ctx, {});
 
-
-$('button').on('click', function () {
+// click event to get today's chart when Search button is clicked
+$('#search-button').on('click', function () {
     event.preventDefault();
     ticker = $('#tickerInput').val().trim();
-    tickerUppercase = ticker.toUpperCase();
-    console.log(tickerUppercase);
-    let queryDefaultURL = "https://financialmodelingprep.com/api/v3/historical-chart/5min/" + tickerUppercase + "?apikey=" + apikey;
-    $.ajax({
-        url: queryDefaultURL,
-        method: "GET",
-    }).then(function (response) {
-        console.log(response);
-        displayTodayChart(response);
-    });
+    tickerUppercase = ticker.toUpperCase(); //API call only works with Uppercase ticker symbols
+    // console.log(tickerUppercase);
+    getInitialSearchURL(tickerUppercase);
+
 });
 
-
+// click event to get historical charts when different timeframes are clicked
 $('#stock-history').on('click', function (event) {
     let range = event.target.id;
     let text = $(event.target).text();
@@ -29,7 +29,7 @@ $('#stock-history').on('click', function (event) {
         history = "historical-price-full/";
     }
     let queryURL =
-        "https://financialmodelingprep.com/api/v3/" + history + tickerUppercase + "?apikey=" + apikey;
+        "https://financialmodelingprep.com/api/v3/" + history + tickerUppercase + "?apikey=" + tickerAPIKey;
 
     $.ajax({
         url: queryURL,
@@ -43,7 +43,18 @@ $('#stock-history').on('click', function (event) {
     });
 });
 
+// call function when Search button is clicked on Page Load
+function getInitialSearchURL(tickerSymbol) {
+    let queryPageLoadURL = "https://financialmodelingprep.com/api/v3/historical-chart/5min/" + tickerSymbol + "?apikey=" + tickerAPIKey;
+    $.ajax({
+        url: queryPageLoadURL,
+        method: "GET",
+    }).then(function (response) {
+        displayTodayChart(response);
+    });
+}
 
+// show today/latest day's stock prices
 function displayTodayChart(stockData) {
     window.__stockData = stockData;
 
@@ -54,18 +65,20 @@ function displayTodayChart(stockData) {
     // find index value for the latest day
     for (let i = 0; i < stockData.length; i++) {
         let day = stockData[i].date.split(" "); //"2020-07-10 09:55:00";
-        closePrice.push(stockData[i].close);
-        closeTime.push(day[1]);
         if (day[0] !== today[0]) {
             break;
         }
+        closePrice.push(stockData[i].close);
+        closeTime.push(day[1]);
     }
 
+    // reverse price to graph from earliest to latest data
     closePrice.reverse();
     closeTime.reverse();
 
-    const ctx = document.getElementById("chart").getContext("2d");
-    const myChart = new Chart(ctx, {
+    // removes previous instance of myChart before creating a new one
+    myChart.destroy();
+    myChart = new Chart(ctx, {
         type: "line",
         data: {
             labels: closeTime,
@@ -93,22 +106,25 @@ function displayTodayChart(stockData) {
             }
         },
     });
+    myChart.update();
 }
 
+
+// display historical daily prices based on parameter input
 function displayHistoryChart(stockData, dayRange, textContent) {
     window.__stockData = stockData;
 
     let dailyPrice = [];
     let dates = [];
 
-    for (let i = dayRange; i >= 0; i--) {
+    for (let i = (dayRange - 1); i >= 0; i--) {
         dailyPrice.push(stockData.historical[i].close);
         dates.push(stockData.historical[i].date);
     }
 
-
-    const ctx = document.getElementById("chart").getContext("2d");
-    const myChart = new Chart(ctx, {
+    // removes previous instance of myChart before creating a new one
+    myChart.destroy();
+    myChart = new Chart(ctx, {
         type: "line",
         data: {
             labels: dates,
@@ -136,4 +152,5 @@ function displayHistoryChart(stockData, dayRange, textContent) {
             }
         },
     });
+    myChart.update();
 }
