@@ -23,7 +23,7 @@ $('button').on('click', function (){
     var articleDate1 = data[0].date;
     var articleTitle1 = data[0].title;
     var articleText1 = data[0].text;
-    $('#news-url1').text(newsUrl1);
+    $('#news-url1').text(articleTitle1);
     $("#news-url1").attr("href",newsUrl1);
     $('#article-date1').text(articleDate1);
     $('#source-name1').text(articleTitle1);
@@ -34,18 +34,17 @@ $('button').on('click', function (){
     var articleDate2 = data[1].date;
     var articleTitle2 = data[1].title;
     var articleText2 = data[1].text;
-    $('#news-url2').text(newsUrl2);
+    $('#news-url2').text(articleTitle2);
     $("#news-url2").attr("href",newsUrl2);
     $('#article-date2').text(articleDate2);
     $('#source-name2').text(articleTitle2);
     $('.card-body1-para').text(articleText2);
 
-   
     var newsUrl3 = data[2].news_url;
     var articleDate3 = data[2].date;
     var articleTitle3 = data[2].title;
     var articleText3 = data[2].text;
-    $('#news-url3').text(newsUrl3);
+    $('#news-url3').text(articleTitle3);
     $("#news-url3").attr("href",newsUrl3);
     $('#article-date3').text(articleDate3);
     $('#source-name3').text(articleTitle3);
@@ -56,7 +55,7 @@ $('button').on('click', function (){
     var articleDate4 = data[3].date;
     var articleTitle4 = data[3].title;
     var articleText4 = data[3].text;
-    $('#news-url4').text(newsUrl4);
+    $('#news-url4').text(articleTitle4);
     $("#news-url4").attr("href",newsUrl4);
     $('#article-date4').text(articleDate4);
     $('#source-name4').text(articleTitle4);
