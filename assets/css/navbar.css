@@ -3,7 +3,7 @@
     border-radius: 30%;
 }
 
-.myButton {
+.myButton, .button {
 	box-shadow: 3px 4px 0px 0px #899599;
 	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
 	background-color:#ededed;
@@ -19,11 +19,11 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #e1e2ed;
 }
-.myButton:hover {
+.myButton:hover, .button {
 	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
 	background-color:#bab1ba;
 }
-.myButton:active {
+.myButton:active, .button {
 	position:relative;
 	top:1px;
 }
