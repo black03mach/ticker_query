@@ -25,7 +25,7 @@
     <!-- script src="./assets/js/script.js" defer></script -->
     <script src="./assets/js/abou-script.js" defer></script>
     <script src="assets/js/script.js" defer></script>
-    <script src="assets/js/script-lee.js" defer></script>
+    <!-- <script src="assets/js/script-lee.js" defer></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
     <script src="assets/js/stock-chart.js" defer></script>
 </head>
@@ -46,8 +46,10 @@
                     <!-- I recommend putting the links to the APIs in the About Us page -MC -->
                     <li class="navigation"><a href="https://financialmodelingprep.com/developer/docs/">Stock API</a></li>
                     <li class="navigation"><a href="https://stocknewsapi.com/">News Api</a></li>
-                    <li class="search"><input type="search" id="tickerInput" maxlength="100%" placeholder="Company Name"></li>
-                    <li><button type="button" class="button round myButton">Search</button></li>
+                    <li class="search"><input type="search" maxlength="100%" placeholder="Company Name"></li>
+                    <li><button type="button" id= "ticker-input" class="button round myButton">Search</button></li>
+
+
                 </ul>
                 <button type="button" class="button hide-for-large" data-toggle="offCanvas">
                     Open Previous Search
@@ -139,42 +141,42 @@
                             <h3 style="margin: 0;" class="text-center">LATEST NEWS</h3>
                         </div>
                         <article>
-                            <div class="card">
+                            <div id= "card-body1" class="card">
                                 <!-- data.title -->
-                                <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
+                                <h5 class="headline"><a class="news-url" id="news-url1" href="#">News Article 1</a></h5>
                                 <p>
-                                    <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
-                                    <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
+                                    <span><i id="source-name1" class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
+                                    <span><i id="article-date1" class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
                                 </p>
-                                <p></p>
+                                <p class = "card-body1-para"></p>
                             </div>
                             ​
-                            <div class="card">
+                            <div id ="card-body2" class="card">
                                 <!-- data.title -->
-                                <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
+                                <h5 class="headline"><a class="news-url" id="news-url2" href="#">News Article 1</a></h5>
                                 <p>
-                                    <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
-                                    <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
+                                    <span><i id="source-name2" class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
+                                    <span><i id="article-date2" class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
                                 </p>
-                                <p></p>
+                                <p class ="card-body1-para"></p>
                             </div>
                             <div class="card">
                                 <!-- data.title -->
-                                <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
+                                <h5 class="headline"><a class="news-url" id="news-url3" href="#">News Article 1</a></h5>
                                 <p>
-                                    <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
-                                    <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
+                                    <span><i id= "source-name3" class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
+                                    <span><i id= "article-date3" class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
                                 </p>
-                                <p></p>
+                                <p class ="card-body1-para"></p>
                             </div>
                             <div class="card">
                                 <!-- data.title -->
-                                <h5 class="headline"><a class="news-url" href="#">News Article 1</a></h5>
+                                <h5 class="headline"><a class="news-url" id="news-url4" href="#">News Article 1</a></h5>
                                 <p>
-                                    <span><i class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
-                                    <span><i class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
+                                    <span><i id="source-name4" class="fi-torso source-name"> By Thadeus &nbsp;&nbsp;</i></span>
+                                    <span><i id="article-date4" class="fi-calendar article-date"> 11/23/16 &nbsp;&nbsp;</i></span>
                                 </p>
-                                <p></p>
+                                <p class ="card-body1-para"></p>
                             </div>
                             ​
                         </article>
