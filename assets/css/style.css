@@ -1,16 +1,23 @@
 body {
-  background-image: linear-gradient( #e9fdfd, #9ee6e6)
-}
-.navbar, ul{
-  font-family: 'Nunito', sans-serif;
-  background-image: linear-gradient( #a7f2a7, #eafeea);
+  background-image: linear-gradient(#e9fdfd, #9ee6e6)
 }
 
-h2, h4, p, li, h5 {
+.navbar,
+ul {
+  font-family: 'Nunito', sans-serif;
+  background-image: linear-gradient(#a7f2a7, #eafeea);
+}
+
+h2,
+h4,
+p,
+li,
+h5 {
   font-family: 'Nunito', sans-serif;
 }
 
-.tickers, .searchedT {
+.tickers,
+.searchedT {
   background-image: linear-gradient(#9ee6e6, #e9fdfd);
   border-radius: 10px;
 }
@@ -18,11 +25,11 @@ h2, h4, p, li, h5 {
 .Metrics {
   background-image: linear-gradient(to bottom right, #a9bdea, #ecf1fd);
   border-radius: 15px;
-  
+
 }
 
 .news {
-  background-color: hsla(60,100%,50%,0.1);
+  background-color: hsla(60, 100%, 50%, 0.1);
   margin-top: 30px;
 
 }
@@ -37,4 +44,18 @@ h2, h4, p, li, h5 {
 
 .footer {
   background-color: white;
+}
+
+.card {
+  padding: 10px;
+}
+
+.tickers {
+  padding: 10px;
+}
+
+form {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
