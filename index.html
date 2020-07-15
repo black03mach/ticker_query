@@ -32,24 +32,21 @@
     <script src="assets/js/stock-chart.js" defer></script>
 </head>
 
-<body class="grid-container">
+<body>
     <header>
         <!-- Sub Navigation -->
         <nav class="top-bar topbar-responsive navbar">
             <div class="top-bar-left">
                 <h1 id="brand">Simpli-Stocks</h1>
             </div>
-            <div class="top-bar-right topbar-responsive-links">
-                <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-                    <button class="menu-icon" type="button" data-toggle></button>
-                </div>
+            <div class="top-bar-right">
                 <ul class="menu horizontal">
                     <li class="navigation"><a href="./aboutus.html">About Us</a></li>
                     <li class="navigation"><a href="https://financialmodelingprep.com/developer/docs/">Stock API</a>
                     </li>
                     <li class="navigation"><a href="https://stocknewsapi.com/">News Api</a></li>
                     <li class="search"><input type="search" id="tickerInput" maxlength="100%"
-                            placeholder="Company Name"></li>
+                            placeholder="Ticker Symbol"></li>
                     <li><button type="button" id="search-button" class="button round myButton">Search</button></li>
                 </ul>
                 <button type="button" id="previous-button" class="button hide-for-large" data-toggle="offCanvas">
@@ -148,21 +145,22 @@
                 ​
                 <!-- Company Info and Latest News -->
                 <div class="cell medium-6 large-4 tickers">
-                    <div class="media-object">
+                    <div class="media-object stack">
                         <div class="media-object-section">
                             <div class="thumbnail">
-                                <img id="companyImage" src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="90px"
-                                    alt="logo">
+                                <img id="companyImage" src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png"
+                                    width="90px" alt="logo">
                             </div>
                         </div>
                         <div class="media-object-section main-section">
                             <h4 id="ticker"></h4>
-                            <p id="description"></p>
-                            <p id="currentPrice"></p>
+                            <h3 id="currentPrice">
+                            </h3>
                         </div>
                     </div>
-
-
+                    <div class="media-object-section">
+                        <p id="description"></p>
+                    </div>
                 </div>
                 ​
                 <!-- Previously Searched Tickers / Portfolio. This will use the off-canvas class to slide in when in small and medium views -->
@@ -218,7 +216,7 @@
         </div>
 
     </main>
-    <section class="news">
+    <section class="news grid-container">
         <div>
             <h3 style="margin: 0;" class="text-center">LATEST NEWS</h3>
         </div>
@@ -294,8 +292,12 @@
         <p>Welcome to Simpli-Stocks. We offer a simple interface to retrieve the most important financial metrics with
             simple and easy to understand explanations. No more financial mumbo jumbo. </p>
         <h5>Enter a Ticker Symbol</h5>
-        <input type="search" id="modal-input" placeholder="Ticker Symbol">
-        <button type="button" id="modal-button" class="button round myButton">Search</button>
+        <form>
+            <input type="search" id="modal-input" placeholder="Ticker Symbol">
+            <button type="button" id="modal-button" class="button round myButton">Search</button>
+        </form>
+    </div>
+
     </div>
 
     <!-- Foundation JavaScript -->

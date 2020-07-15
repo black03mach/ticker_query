@@ -7,7 +7,7 @@ $(document).ready(function () {
         let modalInputVal = $('#modal-input').val();
 
         //use global variable from stock-chart.js
-        tickerUppercase = modalInputVal.toUpperCase()
+        tickerUppercase = modalInputVal.toUpperCase();
 
         // call function from script.js
         callRequests(tickerUppercase);
@@ -17,8 +17,8 @@ $(document).ready(function () {
         displayNews(tickerUppercase);
         // close modal
         $('#page-load-modal').foundation('close');
-        
+
         displayTickers();
     })
-   
+
 })
