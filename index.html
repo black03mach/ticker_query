@@ -27,7 +27,7 @@
     <script src="assets/js/page-load.js" defer></script>
     <script src="./assets/js/abou-script.js" defer></script>
     <script src="assets/js/script.js" defer></script>
-    <!-- <script src="assets/js/script-lee.js" defer></script> -->
+    <script src="assets/js/saveSearch.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
     <script src="assets/js/stock-chart.js" defer></script>
 </head>
@@ -137,64 +137,11 @@
                         </div>
                     </div>
 
-                    <section class="news">
-                        <div>
-                            <h3 style="margin: 0;" class="text-center">LATEST NEWS</h3>
-                        </div>
-                        <article>
-                            <div id="card-body1" class="card">
-                                <!-- data.title -->
-                                <h5 class="headline"><a class="news-url" id="news-url1" href="#">News Article 1</a></h5>
-                                <p>
-                                    <span><i id="source-name1" class="fi-torso source-name"> By Thadeus
-                                            &nbsp;&nbsp;</i></span>
-                                    <span><i id="article-date1" class="fi-calendar article-date"> 11/23/16
-                                            &nbsp;&nbsp;</i></span>
-                                </p>
-                                <p class="card-body1-para"></p>
-                            </div>
-                            ​
-                            <div id="card-body2" class="card">
-                                <!-- data.title -->
-                                <h5 class="headline"><a class="news-url" id="news-url2" href="#">News Article 1</a></h5>
-                                <p>
-                                    <span><i id="source-name2" class="fi-torso source-name"> By Thadeus
-                                            &nbsp;&nbsp;</i></span>
-                                    <span><i id="article-date2" class="fi-calendar article-date"> 11/23/16
-                                            &nbsp;&nbsp;</i></span>
-                                </p>
-                                <p class="card-body1-para"></p>
-                            </div>
-                            <div class="card">
-                                <!-- data.title -->
-                                <h5 class="headline"><a class="news-url" id="news-url3" href="#">News Article 1</a></h5>
-                                <p>
-                                    <span><i id="source-name3" class="fi-torso source-name"> By Thadeus
-                                            &nbsp;&nbsp;</i></span>
-                                    <span><i id="article-date3" class="fi-calendar article-date"> 11/23/16
-                                            &nbsp;&nbsp;</i></span>
-                                </p>
-                                <p class="card-body1-para"></p>
-                            </div>
-                            <div class="card">
-                                <!-- data.title -->
-                                <h5 class="headline"><a class="news-url" id="news-url4" href="#">News Article 1</a></h5>
-                                <p>
-                                    <span><i id="source-name4" class="fi-torso source-name"> By Thadeus
-                                            &nbsp;&nbsp;</i></span>
-                                    <span><i id="article-date4" class="fi-calendar article-date"> 11/23/16
-                                            &nbsp;&nbsp;</i></span>
-                                </p>
-                                <p class="card-body1-para"></p>
-                            </div>
-                            ​
-                        </article>
-                        ​
-                    </section>
+                    
                 </div>
                 ​
                 <!-- Previously Searched Tickers / Portfolio. This will use the off-canvas class to slide in when in small and medium views -->
-                <div class="off-canvas-absolute position-right reveal-for-large large-3" id="offCanvas" data-off-canvas>
+                <div class="off-canvas-absolute position-right reveal-for-large large-3 searchedT" id="offCanvas" data-off-canvas>
                     <button class="close-button" aria-label="Close menu" type="button" data-close>
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -208,7 +155,7 @@
                                 </div>
                             </div>
                             <div class="media-object-section main-section">
-                                <h5>Ticker 1</h5>
+                                <h5 id="#ticker1"></h5>
                                 <p>Company Description</p>
                                 <p>Price</p>
                             </div>
@@ -243,8 +190,62 @@
                 </div>
             </div>
         </div>
+        
     </main>
-
+    <section class="news">
+        <div>
+            <h3 style="margin: 0;" class="text-center">LATEST NEWS</h3>
+        </div>
+        <article>
+            <div id="card-body1" class="card">
+                <!-- data.title -->
+                <h5 class="headline"><a class="news-url" id="news-url1" href="#">News Article 1</a></h5>
+                <p>
+                    <span><i id="source-name1" class="fi-torso source-name"> By Thadeus
+                            &nbsp;&nbsp;</i></span>
+                    <span><i id="article-date1" class="fi-calendar article-date"> 11/23/16
+                            &nbsp;&nbsp;</i></span>
+                </p>
+                <p class="card-body1-para"></p>
+            </div>
+            ​
+            <div id="card-body2" class="card">
+                <!-- data.title -->
+                <h5 class="headline"><a class="news-url" id="news-url2" href="#">News Article 1</a></h5>
+                <p>
+                    <span><i id="source-name2" class="fi-torso source-name"> By Thadeus
+                            &nbsp;&nbsp;</i></span>
+                    <span><i id="article-date2" class="fi-calendar article-date"> 11/23/16
+                            &nbsp;&nbsp;</i></span>
+                </p>
+                <p class="card-body1-para"></p>
+            </div>
+            <div class="card">
+                <!-- data.title -->
+                <h5 class="headline"><a class="news-url" id="news-url3" href="#">News Article 1</a></h5>
+                <p>
+                    <span><i id="source-name3" class="fi-torso source-name"> By Thadeus
+                            &nbsp;&nbsp;</i></span>
+                    <span><i id="article-date3" class="fi-calendar article-date"> 11/23/16
+                            &nbsp;&nbsp;</i></span>
+                </p>
+                <p class="card-body1-para"></p>
+            </div>
+            <div class="card">
+                <!-- data.title -->
+                <h5 class="headline"><a class="news-url" id="news-url4" href="#">News Article 1</a></h5>
+                <p>
+                    <span><i id="source-name4" class="fi-torso source-name"> By Thadeus
+                            &nbsp;&nbsp;</i></span>
+                    <span><i id="article-date4" class="fi-calendar article-date"> 11/23/16
+                            &nbsp;&nbsp;</i></span>
+                </p>
+                <p class="card-body1-para"></p>
+            </div>
+            ​
+        </article>
+        ​
+    </section>
     <footer>
         <div class="cell medium-6">
             <ul class="menu footer">

@@ -6,11 +6,11 @@ body {
   background-image: linear-gradient( #a7f2a7, #eafeea);
 }
 
-h2, h4, p, li {
+h2, h4, p, li, h5 {
   font-family: 'Nunito', sans-serif;
 }
 
-.tickers {
+.tickers, .searchedT {
   background-image: linear-gradient(#9ee6e6, #e9fdfd);
   border-radius: 10px;
 }

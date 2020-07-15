@@ -1,5 +1,5 @@
 var newTickers = [];
-let modalInputVal = $('#modal-input').val();
+let modalInputVal = $('#modal-input').val().trim();
 
 function displayTickers() {
     //parse object of arrays in local storage or else if empty will just be empty
@@ -11,7 +11,7 @@ function displayTickers() {
     }
     newTickers.push(stockObj);
     localStorage.setItem('Ticker', JSON.stringify(newTickers));
-    console.log(modalInputVal.value.trim());
+    console.log(modalInputVal);
     
     // var saveSearch = $("<h5>").text(getTickers);
     // $("#ticker1").val(localStorage.getItem(getTickers)).append(saveSearch);
