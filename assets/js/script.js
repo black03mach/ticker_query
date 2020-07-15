@@ -38,13 +38,14 @@ function callRequests(tickerInput) {
         var currentPrice = responseMetric[0].price;
         var symbol = responseMetric[0].symbol;
         var companyImage = responseMetric[0].image;
+        console.log
 
         $("#beta").text(betaMetric);
         $("#dividend").text(divMetric);
         $("#description").text(companyDesciption);
         $("#currentPrice").text(currentPrice);
         $("#ticker").text(symbol);
-        $("#companyImage").image(companyImage);
+        $("#companyImage").attr("src", companyImage);
     })
 
     // Stock year high
