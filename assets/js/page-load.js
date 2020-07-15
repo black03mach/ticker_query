@@ -12,6 +12,9 @@ $(document).ready(function () {
         // call function from script.js
         callRequests(tickerUppercase);
 
+        // call function from abou-script.js
+        displayNews(tickerUppercase);
+
         // call function from stock-chart.js
         getInitialSearchURL(tickerUppercase);
 
