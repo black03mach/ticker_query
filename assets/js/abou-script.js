@@ -4,14 +4,16 @@ var queryUrl = "http://stocknewsapi.com/api/v1?";
 
 $('button').on('click', function (){
     event.preventDefault();    
-    // var tickerNews = {}
+     var tickerNews = {}
 
     userChoice = $(".search input").val();
     displayNews(userChoice);
-    // var queryActual = queryUrl + $.param(tickerNews);
-    // console.log(queryActual);
+    var queryActual = queryUrl + $.param(tickerNews);
+    console.log(queryActual);
 
-    function displayNews(userChoice){
+    
+})
+function displayNews(userChoice){
     $.ajax({
         url : "https://stocknewsapi.com/api/v1?items=50&token=75mcsxzsde9ronsyffilsqncg6djkx8ecrsofimm&tickers="+userChoice,
         method : "GET",
@@ -62,6 +64,3 @@ $('button').on('click', function (){
     $('.card-body1-para').text(articleText4);
     })
     }
-})
-
-
