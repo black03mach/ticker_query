@@ -14,7 +14,7 @@ $(document).ready(function () {
 
         // call function from stock-chart.js
         getInitialSearchURL(tickerUppercase);
-
+        displayNews(tickerUppercase);
         // close modal
         $('#page-load-modal').foundation('close');
     })
