@@ -1,19 +1,29 @@
 var newTickers = [];
 
-function displayTickers(input) {
-    //parse object of arrays in local storage or else if empty will just be empty
 
-    // var getTickers = JSON.parse(window.localStorage.getItem('Ticker')) || [];
-    // console.log(getTickers)
+function saveTickers(input) {
     var stockObj = {
-        "ticker": input
+        ticker:input
     }
     newTickers.push(stockObj);
     localStorage.setItem('Ticker', JSON.stringify(newTickers));
-    // console.log(modalInputVal);
 
-    // var saveSearch = $("<h5>").text(getTickers);
-    // $("#ticker1").val(localStorage.getItem(getTickers)).append(saveSearch);
+    console.log(newTickers);
+
+}
+
+
+
+function displayTickers () {
+ var getTickers = JSON.parse(window.localStorage.getItem('Ticker')) || [];
+
+ for (var i = 0; i < getTickers.length; i++) {
+    console.log(getTickers[i].ticker);
+    $("#ticker1").text(getTickers[i].ticker);
+ }
+
+
 
 
 }
+displayTickers();
