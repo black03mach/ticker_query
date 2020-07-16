@@ -10,7 +10,7 @@ $('#search-button').on('click', function () {
     // Ill check this code once we have everything up and running.
     // console.log(tickerInput)
     callRequests(tickerInput);
-    
+    displayTickers();
 
 })
 
@@ -39,7 +39,9 @@ function callRequests(tickerInput) {
         var currentPrice = responseMetric[0].price;
         var symbol = responseMetric[0].symbol;
         var companyImage = responseMetric[0].image;
-        console.log
+        var name = responseMetric[0].companyName;
+        // console.log
+        saveTickers(tickerInput, companyImage, name);
 
         $("#beta").text(betaMetric);
         $("#dividend").text(divMetric);
@@ -79,5 +81,5 @@ function callRequests(tickerInput) {
     }).then(function (response) {
         //console.log(response)
     })
-    saveTickers(tickerInput);
+
 }

@@ -11,14 +11,12 @@ $(document).ready(function () {
 
         // call function from script.js
         callRequests(tickerUppercase);
-
+        displayTickers();
         // call function from stock-chart.js
         getInitialSearchURL(tickerUppercase);
         displayNews(tickerUppercase);
         // close modal
         $('#page-load-modal').foundation('close');
-
-        saveTickers(tickerUppercase);
     })
 
 })
