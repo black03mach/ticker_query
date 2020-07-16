@@ -14,7 +14,7 @@ $('#search-button').on('click', function () {
     ticker = $('#tickerInput').val().trim();
     tickerUppercase = ticker.toUpperCase(); //API call only works with Uppercase ticker symbols
     // console.log(tickerUppercase);
-    getInitialSearchURL(tickerUppercase);
+    getChartURL(tickerUppercase);
 
 });
 
@@ -44,7 +44,7 @@ $('#stock-history').on('click', function (event) {
 });
 
 // call function when Search button is clicked on Page Load
-function getInitialSearchURL(tickerSymbol) {
+function getChartURL(tickerSymbol) {
     let queryPageLoadURL = "https://financialmodelingprep.com/api/v3/historical-chart/5min/" + tickerSymbol + "?apikey=" + tickerAPIKey;
     $.ajax({
         url: queryPageLoadURL,
@@ -83,7 +83,7 @@ function displayTodayChart(stockData) {
         data: {
             labels: closeTime,
             datasets: [{
-                label: today[0] + "_" + tickerUppercase,
+                label: today[0],
                 data: closePrice,
                 backgroundColor: "rgba(255, 99, 132, 0.2)",
                 borderColor: "rgba(255, 99, 132, 1)",
@@ -129,7 +129,7 @@ function displayHistoryChart(stockData, dayRange, textContent) {
         data: {
             labels: dates,
             datasets: [{
-                label: textContent + "_" + tickerUppercase,
+                label: textContent,
                 data: dailyPrice,
                 backgroundColor: "rgba(255, 99, 132, 0.2)",
                 borderColor: "rgba(255, 99, 132, 1)",
