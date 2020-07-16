@@ -13,7 +13,7 @@ $(document).ready(function () {
         callRequests(tickerUppercase);
         displayTickers();
         // call function from stock-chart.js
-        getInitialSearchURL(tickerUppercase);
+        getChartURL(tickerUppercase);
         displayNews(tickerUppercase);
         // close modal
         $('#page-load-modal').foundation('close');

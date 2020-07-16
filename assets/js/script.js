@@ -9,8 +9,9 @@ $('#search-button').on('click', function () {
     //console.log(tickerInput);
     // Ill check this code once we have everything up and running.
     // console.log(tickerInput)
-    callRequests(tickerInput);
     displayTickers();
+    callRequests(tickerInput);
+
 
 })
 
@@ -46,7 +47,7 @@ function callRequests(tickerInput) {
         $("#beta").text(betaMetric);
         $("#dividend").text(divMetric);
         $("#description").text(companyDesciption);
-        $("#currentPrice").text(currentPrice);
+        $("#currentPrice").text("$" + currentPrice);
         $("#ticker").text(symbol);
         $("#companyImage").attr("src", companyImage);
     })
@@ -74,12 +75,12 @@ function callRequests(tickerInput) {
         $("#pbRatio").text(pricebookRatio);
     })
 
-    // News AJAX call
-    $.ajax({
-        url: newsqueryURL,
-        method: "GET"
-    }).then(function (response) {
-        //console.log(response)
-    })
+    // // News AJAX call
+    // $.ajax({
+    //     url: newsqueryURL,
+    //     method: "GET"
+    // }).then(function (response) {
+    //     //console.log(response)
+    // })
 
 }
