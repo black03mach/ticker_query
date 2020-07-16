@@ -29,7 +29,7 @@ function displayNews(userChoice){
     $("#news-url1").attr("href",newsUrl1);
     $('#article-date1').text(articleDate1);
     $('#source-name1').text(articleTitle1);
-    $('.card-body1-para').text(articleText1);
+    $('#card-text1').text(articleText1);
 
     
     var newsUrl2 = data[1].news_url;
@@ -40,7 +40,7 @@ function displayNews(userChoice){
     $("#news-url2").attr("href",newsUrl2);
     $('#article-date2').text(articleDate2);
     $('#source-name2').text(articleTitle2);
-    $('.card-body1-para').text(articleText2);
+    $('#card-text2').text(articleText2);
 
     var newsUrl3 = data[2].news_url;
     var articleDate3 = data[2].date;
@@ -50,7 +50,7 @@ function displayNews(userChoice){
     $("#news-url3").attr("href",newsUrl3);
     $('#article-date3').text(articleDate3);
     $('#source-name3').text(articleTitle3);
-    $('.card-body1-para').text(articleText3);
+    $('#card-text3').text(articleText3);
 
    
     var newsUrl4 = data[3].news_url;
@@ -61,6 +61,6 @@ function displayNews(userChoice){
     $("#news-url4").attr("href",newsUrl4);
     $('#article-date4').text(articleDate4);
     $('#source-name4').text(articleTitle4);
-    $('.card-body1-para').text(articleText4);
+    $('#card-text4').text(articleText4);
     })
     }
