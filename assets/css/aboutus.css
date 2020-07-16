@@ -5,17 +5,15 @@ body {
   }
   .grid-container{
     display: flex;
-    flex-flow: column wrap;
-    flex-wrap: wrap-reverse;
-    justify-content: space-between;
+    flex-wrap: wrap;;
     height: 250px;
-    /* padding: 30px;
-    padding-right: 10px; */
-    width: 50px;
-}
+    justify-content: space-between;
+  }
 
   .card{
     background-image: linear-gradient( #a7f2a7, #eafeea);
+    margin-right: 200px;
+    margin-top: 50px;
 }
 .card-divider{
     box-shadow: 3px 4px 0px 0px #899599;
