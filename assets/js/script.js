@@ -5,11 +5,12 @@ var newsAPIKey = "fybsnxqp9z369dpyru1k6ndejeoj7n2pytwfntsq"
 
 $('#search-button').on('click', function () {
     event.preventDefault();
-    var tickerInput = $('#tickerInput').val().trim();
+    var tickerInput = $('#tickerInput').val().trim().toUpperCase();
     //console.log(tickerInput);
     // Ill check this code once we have everything up and running.
     // console.log(tickerInput)
     callRequests(tickerInput);
+    
 
 })
 
@@ -78,4 +79,5 @@ function callRequests(tickerInput) {
     }).then(function (response) {
         //console.log(response)
     })
+    saveTickers(tickerInput);
 }

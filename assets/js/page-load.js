@@ -18,7 +18,7 @@ $(document).ready(function () {
         // close modal
         $('#page-load-modal').foundation('close');
 
-        displayTickers();
+        saveTickers(tickerUppercase);
     })
 
 })
