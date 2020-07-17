@@ -1,12 +1,12 @@
 // Patrick's work begin
 
 var tickerAPIKey = "d36814bc6409a96b343b47b09e7eb44a";
-// var newsAPIKey = "fybsnxqp9z369dpyru1k6ndejeoj7n2pytwfntsq"
+// var newsAPIKey = "fybsnxqp9z369dpyru1k6ndejeoj7n2pytwfntsq";
 
 $('#search-button').on('click', function () {
     event.preventDefault();
     var tickerInput = $('#tickerInput').val().trim().toUpperCase();
-    //console.log(tickerInput);
+    console.log(tickerInput);
     displayTickers();
     callRequests(tickerInput);
 
@@ -71,12 +71,12 @@ function callRequests(tickerInput) {
         $("#pbRatio").text(pricebookRatio);
     })
 
-    // // News AJAX call
+    // News AJAX call
     // $.ajax({
     //     url: newsqueryURL,
     //     method: "GET"
     // }).then(function (response) {
-    //     //console.log(response)
+    //     console.log(response)
     // })
 
 }
