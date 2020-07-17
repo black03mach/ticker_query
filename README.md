@@ -43,11 +43,11 @@ Then I expect my previous searches to show.
 
 [Stock News API](https://stocknewsapi.com/)
 
-![Layout Placeholder](./assets/img/ProjectProposalv2.jpg)
+![Layout Placeholder](./assets/img/ProjectProposalv2.JPG)
 
-![Initial Screen](./assets/img/Initial-Screen.jpg)
+![Initial Screen](./assets/img/Initial-Screen.JPG)
 
-![Main Screen 1](./assets/img/Main-Screen-1.jpg)
+![Main Screen 1](./assets/img/Main-Screen-1.JPG)
 
-![Main Screen 2](./assets/img/Main-Screen-2.jpg)
+![Main Screen 2](./assets/img/Main-Screen-2.JPG)
 
