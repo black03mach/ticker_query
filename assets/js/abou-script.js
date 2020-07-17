@@ -53,6 +53,7 @@ function displayNews(userChoice) {
         $('#card-text3').text(articleText3);
 
 
+
         var newsUrl4 = data[3].news_url;
         var articleDate4 = data[3].date;
         var articleTitle4 = data[3].title;
