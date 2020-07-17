@@ -22,10 +22,11 @@ $(document).ready(function () {
         })
     } else { // if page has been already visited, display the last stock
         displayTickers(); // call function to display previously saved stock and last stock
-        console.log(lastSavedTicker);
-        callRequests(lastSavedTicker);
-        getChartURL(lastSavedTicker);
-        displayNews(lastSavedTicker);
+        // console.log(lastSavedTicker);
+        tickerUppercase = lastSavedTicker;
+        callRequests(tickerUppercase);
+        getChartURL(tickerUppercase);
+        displayNews(tickerUppercase);
     }
 
 })
