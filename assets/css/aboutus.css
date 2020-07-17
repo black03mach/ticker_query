@@ -1,24 +1,31 @@
 body {
-    font-family: 'Nunito', sans-serif;
-    background-image: linear-gradient( #e9fdfd, #9ee6e6)
-    
-  }
-  .grid-container{
+  font-family: 'Nunito', sans-serif;
+  background-image: linear-gradient( #e9fdfd, #9ee6e6)
+}
+
+h2, h4, p, h5 {
+  font-family: 'Nunito', sans-serif;
+}
+
+
+.grid-container {
     display: flex;
     flex-wrap: wrap;;
     height: 250px;
     justify-content: space-between;
   }
-  .mission-img { 
-width: 500px;
-height: 250px;
-display: center;
-float: left;
-padding-right: 10px;
-  }
-  h2{
-      text-align: center;
-      box-shadow: 3px 4px 0px 0px #899599;
+
+.mission-img { 
+  width: 500px;
+  height: 250px;
+  display: center;
+  float: left;
+  padding-right: 10px;
+}
+
+h2 {
+  text-align: center;
+  box-shadow: 3px 4px 0px 0px #899599;
 	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
 	background-color:#ededed;
 	border-radius:15px;
@@ -29,28 +36,30 @@ padding-right: 10px;
 	font-weight:bold;
 	padding:7px 25px;
 	text-decoration:none;
-    text-shadow:0px 1px 0px #e1e2ed;
-  }
+  text-shadow:0px 1px 0px #e1e2ed;
+}
+
 .card-section{
- float:right;
-font-weight: bold;
-width: auto;
-text-align: justify;
-padding-left: 10px;
-
+  float:right;
+  font-weight: bold;
+  width: auto;
+  text-align: justify;
+  padding-left: 10px;
 }
-  h4{
-       font-weight: bold;
-       font-size: 30px;
-  }
 
-  .card{
-    background-image: linear-gradient( #a7f2a7, #eafeea);
-    margin-right: 200px;
-    margin-top: 50px;
+h4 {
+  font-weight: bold;
+  font-size: 30px;
 }
-.card-divider{
-    box-shadow: 3px 4px 0px 0px #899599;
+
+.card {
+  background-image: linear-gradient( #a7f2a7, #eafeea);
+  margin-right: 200px;
+  margin-top: 50px;
+}
+
+.card-divider {
+  box-shadow: 3px 4px 0px 0px #899599;
 	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
 	background-color:#ededed;
 	border-radius:15px;
@@ -63,6 +72,9 @@ padding-left: 10px;
 	font-weight:bold;
 	padding:7px 25px;
 	text-decoration:none;
-    text-shadow:0px 1px 0px #e1e2ed;
-    
+  text-shadow:0px 1px 0px #e1e2ed;
+}
+
+.card-divider {
+  text-align: center;
 }
