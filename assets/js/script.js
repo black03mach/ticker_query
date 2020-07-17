@@ -5,11 +5,13 @@ var newsAPIKey = "fybsnxqp9z369dpyru1k6ndejeoj7n2pytwfntsq"
 
 $('#search-button').on('click', function () {
     event.preventDefault();
-    var tickerInput = $('#tickerInput').val().trim();
+    var tickerInput = $('#tickerInput').val().trim().toUpperCase();
     //console.log(tickerInput);
     // Ill check this code once we have everything up and running.
     // console.log(tickerInput)
+    displayTickers();
     callRequests(tickerInput);
+
 
 })
 
@@ -38,12 +40,14 @@ function callRequests(tickerInput) {
         var currentPrice = responseMetric[0].price;
         var symbol = responseMetric[0].symbol;
         var companyImage = responseMetric[0].image;
-        console.log
+        var name = responseMetric[0].companyName;
+        // console.log
+        saveTickers(tickerInput, companyImage, name);
 
         $("#beta").text(betaMetric);
         $("#dividend").text(divMetric);
         $("#description").text(companyDesciption);
-        $("#currentPrice").text(currentPrice);
+        $("#currentPrice").text("$" + currentPrice);
         $("#ticker").text(symbol);
         $("#companyImage").attr("src", companyImage);
     })
@@ -71,11 +75,12 @@ function callRequests(tickerInput) {
         $("#pbRatio").text(pricebookRatio);
     })
 
-    // News AJAX call
-    $.ajax({
-        url: newsqueryURL,
-        method: "GET"
-    }).then(function (response) {
-        //console.log(response)
-    })
+    // // News AJAX call
+    // $.ajax({
+    //     url: newsqueryURL,
+    //     method: "GET"
+    // }).then(function (response) {
+    //     //console.log(response)
+    // })
+
 }

@@ -82,18 +82,18 @@
                             <div>
                                 <div class="card">
                                     <div class="card-section">
-                                        <span title="Beta is a measure of volatility of a security vs the overall market. Stable companies will have a smaller beta while companies that experience price fluctuations
+                                        <span data-tooltip tabindex="1" title="Beta is a measure of volatility of a security vs the overall market. Stable companies will have a smaller beta while companies that experience price fluctuations
                                         will have a higher beta. The market as a whole has a beta of 1, which means a beta greater than 1 will have more volatility swings than the market. Beta lower than one
                                         will imply that the stock is more stable. Depending if youre risk averse or risk seeing you should review the overall beta of your portfolio to see if you should rebalance
                                         based on your needs.">
                                             <h4>Beta</h4>
-                                            <p id="beta"></p>
                                         </span>
+                                        <p id="beta"></p>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="card-section">
-                                        <span
+                                        <span data-tooltip tabindex="1"
                                             title="Dividends are a distribution of a companies earnings to shareholders, typically common stock holders. Companies pay these throughout the year, whether
                                         it be monthly, quarterly, or semi-annually. When a dividend is paid out, there will be an abrupt drop in the company stock price by the amount of the dividend. If 
                                         you own 50 shares of stock of a company that pays a 2 dollar dividend quarterly you will recieve 100 dollars a quarter or 400 a year. The investor only recieves payment
@@ -106,7 +106,8 @@
                                 ​
                                 <div class="card">
                                     <div class="card-section">
-                                        <span title="This is the year to date high of the stock price.">
+                                        <span data-tooltip tabindex="1"
+                                            title="This is the year to date high of the stock price.">
                                             <h4>YTD High</h4>
                                         </span>
                                         <p id="yearHigh"></p>
@@ -115,7 +116,7 @@
                                 ​
                                 <div class="card">
                                     <div class="card-section">
-                                        <span title="P/E Ratio = (Stock Price / ((Net Income - Preferred Dividends) / Average Outstanding Common Shares). The denominator is also knows as EPS, or
+                                        <span data-tooltip tabindex="1" title="P/E Ratio = (Stock Price / ((Net Income - Preferred Dividends) / Average Outstanding Common Shares). The denominator is also knows as EPS, or
                                         Earnings per Share. This compares the price of its stock to its earnings, which in turn tells you how much you're paying for each dollar of earnings. It is
                                         wise to compare P/E ratios between similar companies as there are different factors that can be driving the ratio. A high P/E could mean that a stock is overvalued, and
                                         a low P/E may indicate that the current pices is low relative to earnings. Faster growing companies typically have higher P/E, which means investors are willing to pay more
@@ -128,7 +129,7 @@
                                 ​
                                 <div class="card">
                                     <div class="card-section">
-                                        <span
+                                        <span data-tooltip tabindex="1"
                                             title="P/B Ratio = (Stock price / (Assets - Liabilities / Outstanding shares)) This is a quick and dirty way to determine if a stock is undervalued. 
                                             If this value is calculated to be < 1.0 the stock is considered undervalued, but typically a value under 3.0 is favorable, with > 3 being over valued. 
                                             Simplified book value is assets - Liabilities which gives the 'net worth' of the company. If this net book value exceeds the price of a share this 
@@ -168,46 +169,10 @@
                     <button class="close-button" aria-label="Close menu" type="button" data-close>
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <div class="off-canvas-content" data-off-canvas-content>
+                    <div class="off-canvas-content pastsearches" data-off-canvas-content>
                         <h5>Previously Searched Tickers</h5>
-                        <div class="media-object">
-                            <div class="media-object-section">
-                                <div class="thumbnail">
-                                    <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="80px"
-                                        alt="logo">
-                                </div>
-                            </div>
-                            <div class="media-object-section main-section">
-                                <h5 id="#ticker1"></h5>
-                                <p>Company Description</p>
-                                <p>Price</p>
-                            </div>
-                        </div>
-                        <div class="media-object">
-                            <div class="media-object-section">
-                                <div class="thumbnail">
-                                    <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="80px"
-                                        alt="logo">
-                                </div>
-                            </div>
-                            <div class="media-object-section main-section">
-                                <h5>Ticker 2</h5>
-                                <p>Company Description</p>
-                                <p>Price</p>
-                            </div>
-                        </div>
-                        <div class="media-object">
-                            <div class="media-object-section">
-                                <div class="thumbnail">
-                                    <img src="https://ccorpusa.com/wp-content/uploads/2017/07/logo.png" width="80px"
-                                        alt="logo">
-                                </div>
-                            </div>
-                            <div class="media-object-section main-section">
-                                <h5>Ticker 3</h5>
-                                <p>Company Description</p>
-                                <p>Price</p>
-                            </div>
+                        <div id="saved-searches">
+
                         </div>
                     </div>
                 </div>

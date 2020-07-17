@@ -17,7 +17,7 @@ h5 {
 }
 
 .tickers,
-.searchedT, 
+.searchedT,
 .schart {
   background-image: linear-gradient(#9ee6e6, #e9fdfd);
   border-radius: 10px;
@@ -56,7 +56,22 @@ h5 {
 }
 
 form {
-  width: 50%;
+  width: 25%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.Metrics {
+  margin-top: 25px;
+  ;
+}
+
+.pastsearches {
+  padding: 10px;
+}
+
+.logos,
+.tickerNames,
+.companyNames {
+  cursor: pointer;
 }
