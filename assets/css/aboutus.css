@@ -9,6 +9,40 @@ body {
     height: 250px;
     justify-content: space-between;
   }
+  .mission-img { 
+width: 500px;
+height: 250px;
+display: center;
+float: left;
+padding-right: 10px;
+  }
+  h2{
+      text-align: center;
+      box-shadow: 3px 4px 0px 0px #899599;
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	background-color:#ededed;
+	border-radius:15px;
+	border:1px solid #d6bcd6;
+	cursor:pointer;
+	color:#3a8a9e;
+	font-family:Arial;
+	font-weight:bold;
+	padding:7px 25px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #e1e2ed;
+  }
+.card-section{
+ float:right;
+font-weight: bold;
+width: auto;
+text-align: justify;
+padding-left: 10px;
+
+}
+  h4{
+       font-weight: bold;
+       font-size: 30px;
+  }
 
   .card{
     background-image: linear-gradient( #a7f2a7, #eafeea);
