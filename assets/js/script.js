@@ -1,29 +1,25 @@
 // Patrick's work begin
 
 var tickerAPIKey = "d36814bc6409a96b343b47b09e7eb44a";
-var newsAPIKey = "fybsnxqp9z369dpyru1k6ndejeoj7n2pytwfntsq"
+// var newsAPIKey = "fybsnxqp9z369dpyru1k6ndejeoj7n2pytwfntsq"
 
 $('#search-button').on('click', function () {
     event.preventDefault();
     var tickerInput = $('#tickerInput').val().trim().toUpperCase();
     //console.log(tickerInput);
-    // Ill check this code once we have everything up and running.
-    // console.log(tickerInput)
     displayTickers();
     callRequests(tickerInput);
 
 
 })
 
-//add a function to show the stock metrics
-//create a function to save the search
 
 // function for ajax call
 function callRequests(tickerInput) {
     var tickerqueryURL = "https://financialmodelingprep.com/api/v3/profile/" + tickerInput + "?apikey=" + tickerAPIKey;
     var tickerratioURL = "https://financialmodelingprep.com/api/v3/ratios/" + tickerInput + "?period=quarter&apikey=" + tickerAPIKey;
     var ytdURL = "https://financialmodelingprep.com/api/v3/quote/" + tickerInput + "?apikey=" + tickerAPIKey;
-    var newsqueryURL = "https://stocknewsapi.com/api/v1?tickers=" + tickerInput + "&items=50&token=" + newsAPIKey;
+    // var newsqueryURL = "https://stocknewsapi.com/api/v1?tickers=" + tickerInput + "&items=50&token=" + newsAPIKey;
     console.log(tickerqueryURL);
     // console.log(newsqueryURL);
     // console.log(ytdURL);
@@ -33,7 +29,7 @@ function callRequests(tickerInput) {
         url: tickerqueryURL,
         method: "GET"
     }).then(function (responseMetric) {
-        //console.log(responseMetric);
+        // console.log(responseMetric);
         var betaMetric = responseMetric[0].beta;
         var divMetric = responseMetric[0].lastDiv;
         var companyDesciption = responseMetric[0].description;
@@ -41,7 +37,7 @@ function callRequests(tickerInput) {
         var symbol = responseMetric[0].symbol;
         var companyImage = responseMetric[0].image;
         var name = responseMetric[0].companyName;
-        // console.log
+
         saveTickers(tickerInput, companyImage, name);
 
         $("#beta").text(betaMetric);

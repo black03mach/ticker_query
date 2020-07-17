@@ -1,6 +1,6 @@
 // array of stored/previously saved tickers
 var savedTickers = [];
-
+var lastSavedTicker = "";
 
 function saveTickers(symbol, companyLogo, companyName) {
 
@@ -24,8 +24,8 @@ function saveTickers(symbol, companyLogo, companyName) {
 function displayTickers() {
     // if localStorage is not empty, parse JSON to savedTickers variable
     savedTickers = JSON.parse(window.localStorage.getItem('Ticker')) || [];
-
-    console.log(savedTickers);
+    lastSavedTicker = savedTickers[savedTickers.length - 1].ticker;
+    // console.log(savedTickers);
 
     var htmlContent = '<div class="media-object"><div class="media-object-section"><div class="thumbnail"><img class="logos" src="" width="80px" alt="logo"></div></div><div class="media-object-section main-section"><h5 class="tickerNames"></h5><p class="companyNames"></p></div></div>';
 
