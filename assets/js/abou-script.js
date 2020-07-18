@@ -1,5 +1,5 @@
 // Sarah's work begin
-var apiKey = "fybsnxqp9z369dpyru1k6ndejeoj7n2pytwfntsq";
+var apiKey = "peg383ovhnucmllud77qw3oktwnecr8uojskexat";
 // var queryUrl = "http://stocknewsapi.com/api/v1?";
 
 $('#search-button').on('click', function () {
