@@ -1,4 +1,4 @@
-# Ticker-Query
+# $impli-Stocks
 
 ## Product Description:
 
@@ -6,16 +6,24 @@ Our goal is to provide an easy to use platform for researching an investment opp
 
 ## User Story:
 As a new investor, 
+
 I want to see stock options 
+
 so that I can make profitable decisions.
+
 I want to learn about stock metrics
+
 so that I can make informed choices.
 
 ## Acceptance Criteria:
 Given I am a new investor,
+
 When I search a ticker symbol for a company, 
+
 Then I expect the company name, bio, price, and financial ratios to populate. 
+
 When I search another ticker symbol for a company,
+
 Then I expect my previous searches to show.
 
 ## Goals:
@@ -43,11 +51,11 @@ Then I expect my previous searches to show.
 
 [Stock News API](https://stocknewsapi.com/)
 
-![Layout Placeholder](./assets/img/ProjectProposalv2.jpg)
+![Layout Placeholder](./assets/img/ProjectProposalv2.JPG)
 
-![Initial Screen](./assets/img/Initial-Screen.jpg)
+![Initial Screen](./assets/img/Initial-Screen.JPG)
 
-![Main Screen 1](./assets/img/Main-Screen-1.jpg)
+![Main Screen 1](./assets/img/Main-Screen-1.JPG)
 
-![Main Screen 2](./assets/img/Main-Screen-2.jpg)
+![Main Screen 2](./assets/img/Main-Screen-2.JPG)
 
